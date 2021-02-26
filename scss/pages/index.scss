@@ -1,0 +1,95 @@
+@import '../responsive';
+.container {
+  padding-left: 300px;
+  @include phablet-down {
+    padding-left: 100px;
+  }
+  @include mobile {
+    padding-left: 0;
+  }
+  .cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @include phablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include tablet {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @include tablet-up {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    .card {
+      background-color: dodgerblue;
+      color: white;
+      padding: 1rem;
+      height: 4rem;
+    }
+  }
+
+
+  //////Side Menu
+  .side-menu {
+    position: fixed;
+    top: 0;
+    width: 300px;
+    left: 0;
+    height: 100%;
+    background: black;
+    @include phablet-down {
+      width: 100px;
+      background: red;
+    }
+    @include mobile {
+      display: none;
+    }
+    ul {
+      li {
+        color: white;
+        list-style-type: none;
+        @include phablet {
+          margin-bottom: 20px;
+        }
+        label {
+          display: inline-block;
+          margin-left: 10px;
+          @include phablet-down {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .top-menu {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    height: 50px;
+    background: blue;
+    left: 0;
+    right: 0;
+    @include mobile {
+      background: green;
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      li {
+        flex: 1;
+        display: inline-block;
+        list-style-type: none;
+        color: red;
+      }
+    }
+  }
+
+}
+
+
